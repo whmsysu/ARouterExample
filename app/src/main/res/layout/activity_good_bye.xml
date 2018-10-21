@@ -9,7 +9,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
-        android:text="GoodBye Activity"
+        android:text="GoodBye!!!"
+        android:id="@+id/tv_welcome"
         />
 
 </RelativeLayout>
