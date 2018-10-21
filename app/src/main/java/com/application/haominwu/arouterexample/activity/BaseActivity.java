@@ -1,5 +1,6 @@
 package com.application.haominwu.arouterexample.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.LayoutRes;
 import android.support.annotation.Nullable;
@@ -17,12 +18,19 @@ public abstract class BaseActivity extends AppCompatActivity {
         setContentView(getContentLayout());
         ButterKnife.bind(this);
         ARouter.getInstance().inject(this);
-        init();
+        Intent intent = getIntent();
+        init(intent);
     }
 
     public abstract @LayoutRes int getContentLayout();
 
-    public void init() {
+    public void init(Intent intent) {
 
+    }
+
+    @Override
+    protected void onNewIntent(Intent intent) {
+        super.onNewIntent(intent);
+        init(intent);
     }
 }
