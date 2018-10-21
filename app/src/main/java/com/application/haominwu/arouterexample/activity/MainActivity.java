@@ -5,7 +5,6 @@ import android.net.Uri;
 
 import com.alibaba.android.arouter.launcher.ARouter;
 import com.application.haominwu.arouterexample.R;
-import com.orhanobut.logger.Logger;
 
 import butterknife.OnClick;
 
@@ -42,5 +41,6 @@ public class MainActivity extends BaseActivity {
                 ARouter.getInstance().build(uri).navigation();
             }
         }
+
     }
 }

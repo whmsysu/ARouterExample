@@ -43,7 +43,7 @@ public class PersistentCookieStore {
                     Cookie decodedCookie = decodeCookie(encodedCookie);
                     if (decodedCookie != null) {
                         if (!cookies.containsKey(entry.getKey())) {
-                            cookies.put(entry.getKey(), new ConcurrentHashMap<>());
+                            cookies.put(entry.getKey(), new ConcurrentHashMap<String, Cookie>());
                         }
                         cookies.get(entry.getKey()).put(name, decodedCookie);
                     }
@@ -61,7 +61,7 @@ public class PersistentCookieStore {
         //将cookies缓存到内存中 如果缓存过期 就重置此cookie
         if (!cookie.persistent()) {
             if (!cookies.containsKey(url.host())) {
-                cookies.put(url.host(), new ConcurrentHashMap<>());
+                cookies.put(url.host(), new ConcurrentHashMap<String, Cookie>());
             }
             cookies.get(url.host()).put(name, cookie);
         } else {
